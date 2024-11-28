@@ -61,6 +61,7 @@ body {
   background: none;
   border: none;
   font-size: 1.8rem;
+  color: black;
   cursor: pointer;
   z-index: 1000;
 }
