@@ -255,7 +255,7 @@ body {
   }
 
   #preloader-text span {
-    font-size: 40px; /* Scale down large text */
+    font-size: 50px; /* Scale down large text */
   }
 
   #preloader-text .third {
@@ -360,7 +360,7 @@ body {
   }
 
   #preloader-text span {
-    font-size: 30px; /* Reduce size for span */
+    font-size: 40px; /* Reduce size for span */
   }
 
   #preloader-text .third {
