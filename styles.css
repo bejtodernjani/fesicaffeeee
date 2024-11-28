@@ -22,19 +22,14 @@ body {
   color: #333;
 }
 
-/* Navbar Styling */
+/* General Navbar Styling */
 .navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
   background-color: #ffffff;
   border-bottom: 2px solid #eee;
-}
-
-.logo {
-  position: absolute;
-  left: 20px;
 }
 
 .logo img {
@@ -58,6 +53,16 @@ body {
 
 .nav-links li a:hover {
   color: #ff6f00;
+}
+
+/* Menu Button Styling */
+.menu-btn {
+  display: none; /* Hidden by default for desktop */
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1000;
 }
 
 /* Hero Section */
@@ -224,6 +229,30 @@ body {
     max-height: 100%;
     object-fit: cover; /* Ensure the video covers the screen */
   }
+  /* Hide desktop-style nav links */
+  .nav-links {
+    display: none; /* Hidden by default on smaller screens */
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 999;
+  }
+
+  /* Show the nav links when menu button is active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Show menu button */
+  .menu-btn {
+    display: block; /* Menu button is visible on smaller screens */
+  }
 
   .hero {
     flex-direction: column;
@@ -289,7 +318,7 @@ body {
 @media (max-width: 480px) {
   #preloader video {
     max-width: 100%;
-    height: auto;; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover;
   }
 

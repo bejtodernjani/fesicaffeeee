@@ -1,23 +1,24 @@
-window.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", function () {
   const preloader = document.getElementById("preloader");
   const preloaderVideo = document.getElementById("preloader-video");
   const mainContent = document.getElementById("main-content");
+  const menuBtn = document.querySelector(".menu-btn");
+  const navLinks = document.querySelector(".nav-links");
 
-  console.log("Preloader script started."); // Debugging
+  console.log("Preloader script started.");
 
   // Function to handle reveal animations
   function reveal() {
-    console.log("Running reveal animation."); // Debugging
     const reveals = document.querySelectorAll(".reveal");
-    for (let i = 0; i < reveals.length; i++) {
+    reveals.forEach((reveal) => {
       const windowHeight = window.innerHeight;
-      const revealTop = reveals[i].getBoundingClientRect().top;
+      const revealTop = reveal.getBoundingClientRect().top;
       const revealPoint = 150;
 
       if (revealTop < windowHeight - revealPoint) {
-        reveals[i].classList.add("active");
+        reveal.classList.add("active");
       }
-    }
+    });
   }
 
   // Attach the scroll event for the reveal animation
@@ -25,30 +26,42 @@ window.addEventListener("load", function () {
 
   // Preloader logic
   const timeoutId = setTimeout(() => {
-    console.log("Timeout reached, hiding preloader."); // Debugging
-    preloader.style.display = "none"; // Hide the preloader
-    mainContent.style.display = "block"; // Show the main content
-    mainContent.style.opacity = "1"; // Trigger the fade-in
+    console.log("Timeout reached, hiding preloader.");
+    preloader.style.display = "none";
+    mainContent.style.display = "block";
+    mainContent.style.opacity = "1";
     reveal(); // Trigger the reveal logic on load
-  }, 6500); // Delay for 6.5 seconds
+  }, 6500);
 
-  // When the video ends before the timeout, hide the preloader and show the content
   preloaderVideo.onended = function () {
-    console.log("Video ended, hiding preloader."); // Debugging
-    clearTimeout(timeoutId); // Cancel the timeout if the video ends
+    console.log("Video ended, hiding preloader.");
+    clearTimeout(timeoutId);
     preloader.style.display = "none";
     mainContent.style.display = "block";
     mainContent.style.opacity = "1";
-    reveal(); // Trigger the reveal logic on load
+    reveal();
   };
 
-  // Fallback: If the video fails to load, ensure the main content appears
   preloaderVideo.onerror = function () {
-    console.log("Video error, hiding preloader."); // Debugging
-    clearTimeout(timeoutId); // Cancel the timeout in case of an error
+    console.log("Video error, hiding preloader.");
+    clearTimeout(timeoutId);
     preloader.style.display = "none";
     mainContent.style.display = "block";
     mainContent.style.opacity = "1";
-    reveal(); // Trigger the reveal logic on load
+    reveal();
   };
+
+  // Menu Button Toggle
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active"); // Toggle visibility of the menu
+    console.log("Menu button clicked.");
+  });
+
+  // Close the menu when a link is clicked
+  navLinks.addEventListener("click", (e) => {
+    if (e.target.tagName === "A") {
+      console.log("Menu link clicked."); // Debugging
+      navLinks.classList.remove("active"); // Hide the menu
+    }
+  });
 });
