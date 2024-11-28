@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Damion&family=Mynerve&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #eee;
+}
+
+.logo {
+  position: absolute;
+  left: 20px;
+}
+
+.logo img {
+  max-width: 65px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  font-family: "Poppins", serif;
+  font-weight: 300;
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ff6f00;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: #ffffff;
+}
+
+.hero-text {
+  font: 64px Bumper Sticker DEMO, sans-serif;
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.hero-text h1 span {
+  color: #ff6f00;
+  font-weight: bold;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+  color: black;
+}
+
+#enjoy {
+  font-size: 4rem;
+  font-family: "Damion", cursive;
+  font-weight: 400;
+}
+
+#first {
+  color: #ff311a;
+}
+
+#second {
+  color: #70c1b3;
+}
+
+.hero-text p {
+  font-family: "Poppins", serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.hero-image img {
+  max-width: 650px;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+/* Coffee Section */
+.coffee-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.coffee-text {
+  font: 64px Bumper Sticker DEMO, sans-serif;
+  flex: 1;
+  padding-right: 20px;
+}
+
+.coffee-text h2 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: black;
+}
+
+.coffee-text h2 span {
+  color: #9a6324;
+}
+
+#kafe {
+  color: black;
+  font-family: "Damion", cursive;
+  font-weight: 400;
+}
+
+.quote {
+  padding-top: 100px;
+}
+.coffee-text .quote {
+  font-family: "Mynerve", cursive;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.coffee-image {
+  flex: 1;
+  text-align: right;
+}
+
+.coffee-image img {
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.8rem;
+  }
+
+  #enjoy {
+    font-size: 3rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-image img {
+    max-width: 90%;
+    margin-top: 20px;
+  }
+
+  .coffee-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .coffee-text {
+    padding-right: 0;
+  }
+
+  .coffee-text h2 {
+    font-size: 2.5rem;
+  }
+
+  #kafe {
+    font-size: 2.2rem;
+  }
+
+  .coffee-text .quote {
+    padding-top: 50px; /* Reduce padding for smaller screens */
+    font-size: 1rem; /* Adjust font size for better readability */
+    text-align: center;
+  }
+
+  .coffee-image img {
+    max-width: 90%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+
+  #enjoy {
+    font-size: 2.5rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+  }
+
+  .coffee-text h2 {
+    font-size: 2rem;
+  }
+
+  #kafe {
+    font-size: 1.8rem;
+  }
+
+  .coffee-text .quote {
+    padding-top: 30px; /* Further reduce padding for smaller screens */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    text-align: center;
+  }
+
+  .coffee-image img {
+    max-width: 100%;
+  }
+}
