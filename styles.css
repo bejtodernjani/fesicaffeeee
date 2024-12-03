@@ -181,6 +181,37 @@ body {
   border-radius: 10px;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns for larger screens */
+  grid-gap: 12px; /* Space between the items */
+  padding: 20px;
+}
+
+.grid-item {
+  border: 3px solid gray; /* Light border around each item */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  overflow: hidden; /* Ensures rounded corners for images */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px); /* Slight upward movement on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block; /* Ensures images are block elements */
+  transition: transform 0.3s ease-in-out;
+}
+
+.grid-item img:hover {
+  transform: scale(1.03); /* Slight zoom effect on hover */
+}
+
 #preloader {
   position: fixed;
   top: 0;
@@ -345,6 +376,10 @@ body {
     max-width: 90%;
     margin-top: 20px;
   }
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+    grid-gap: 10px; /* Reduced gap for smaller screens */
+  }
 }
 
 @media (max-width: 480px) {
@@ -403,5 +438,10 @@ body {
 
   .coffee-image img {
     max-width: 100%;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr; /* Single column for mobile */
+    grid-gap: 8px; /* Compact spacing for small screens */
   }
 }
