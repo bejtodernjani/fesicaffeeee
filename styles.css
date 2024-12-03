@@ -197,7 +197,7 @@ body {
 
 .grid-item:hover {
   transform: translateY(-5px); /* Slight upward movement on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Even stronger shadow on hover */
 }
 
 .grid-item img {
