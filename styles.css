@@ -189,9 +189,8 @@ body {
 }
 
 .grid-item {
-  border: 3px solid black; /* Light border around each item */
   border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Subtle shadow effect */
   overflow: hidden; /* Ensures rounded corners for images */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
