@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Damion&family=Mynerve&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Damion&family=Mynerve&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
 
 @font-face {
   font-family: "Bumper Sticker DEMO";
@@ -125,6 +125,26 @@ body {
   box-shadow: none;
   background-color: transparent;
 }
+.hero-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: black;
+  color: white;
+  font-family: "Bumper Sticker DEMO", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.hero-button:hover {
+  background-color: #ff8c1a;
+  transform: scale(1.05);
+}
 
 /* Coffee Section */
 .coffee-section {
@@ -162,6 +182,7 @@ body {
 .quote {
   padding-top: 100px;
 }
+
 .coffee-text .quote {
   font-family: "Mynerve", cursive;
   font-weight: 400;
@@ -193,22 +214,33 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Subtle shadow effect */
   overflow: hidden; /* Ensures rounded corners for images */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.grid-item:hover {
-  transform: translateY(-5px); /* Slight upward movement on hover */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Even stronger shadow on hover */
+  position: relative;
 }
 
 .grid-item img {
-  width: 100%;
-  height: auto;
-  display: block; /* Ensures images are block elements */
+  display: block; /* Ensures no inline spacing */
+  width: 100%; /* Makes the image fit the container width */
+  height: 100%; /* Makes the image fit the container height */
+  object-fit: cover; /* Ensures the image covers the container without stretching */
+  margin: 0; /* Removes any default margins */
+  padding: 0; /* Removes any default paddings */
   transition: transform 0.3s ease-in-out;
 }
 
 .grid-item img:hover {
   transform: scale(1.03); /* Slight zoom effect on hover */
+}
+
+/* Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px); /* Move slightly down */
+  transition: all 0.6s ease-in-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0); /* Reset position */
 }
 
 #preloader {
@@ -230,41 +262,31 @@ body {
   max-height: 100%;
   object-fit: cover;
 }
+
 #preloader-text {
   margin-top: 20px; /* Add space between video and text */
   font-size: 1.2rem; /* Adjust text size */
-  color: black; /* White text for contrast */
+  color: black;
   text-align: center;
   font-family: "Mynerve", cursive;
 }
+
 #preloader-text span {
   font-size: 50px;
   font-family: "Damion", cursive;
   color: red;
 }
+
 #preloader-text .third {
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   color: gray;
 }
 
-/* Main Content Hidden Initially */
 #main-content {
-  display: none;
+  display: none; /* Initially hidden */
   opacity: 0; /* Start fully transparent */
-  transition: opacity 15s ease-in-out; /* Smooth fade-in effect */
-}
-/* Hidden state (before appearing) */
-.reveal {
-  opacity: 0;
-  transform: translateY(50px); /* Move slightly down */
-  transition: all 0.6s ease-in-out; /* Smooth animation */
-}
-
-/* Active state (visible) */
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0); /* Reset position */
+  transition: opacity 1.5s ease-in-out;
 }
 
 /* Responsive Design */
@@ -343,8 +365,13 @@ body {
   }
 
   .hero-image img {
+    padding-top: 100px;
     max-width: 90%;
     margin-top: 20px;
+  }
+  .hero-button {
+    font-size: 0.9rem; /* Slightly smaller font */
+    padding: 10px 20px; /* Reduced padding */
   }
 
   .coffee-section {
@@ -418,7 +445,13 @@ body {
   }
 
   .hero-image img {
+    padding-top: 0px;
     max-width: 100%;
+  }
+  .hero-button {
+    font-size: 0.8rem; /* Smaller font for very small screens */
+    padding: 8px 16px; /* More compact button */
+    margin-top: 15px; /* Adjust spacing above the button */
   }
 
   .coffee-text h2 {

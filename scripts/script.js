@@ -21,47 +21,48 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Attach the scroll event for the reveal animation
-  window.addEventListener("scroll", reveal);
-
-  // Preloader logic
-  const timeoutId = setTimeout(() => {
-    console.log("Timeout reached, hiding preloader.");
-    preloader.style.display = "none";
-    mainContent.style.display = "block";
-    mainContent.style.opacity = "1";
-    reveal(); // Trigger the reveal logic on load
-  }, 6500);
-
-  preloaderVideo.onended = function () {
-    console.log("Video ended, hiding preloader.");
-    clearTimeout(timeoutId);
-    preloader.style.display = "none";
-    mainContent.style.display = "block";
-    mainContent.style.opacity = "1";
-    reveal();
-  };
-
-  preloaderVideo.onerror = function () {
-    console.log("Video error, hiding preloader.");
-    clearTimeout(timeoutId);
-    preloader.style.display = "none";
-    mainContent.style.display = "block";
-    mainContent.style.opacity = "1";
-    reveal();
-  };
-
   // Menu Button Toggle
   menuBtn.addEventListener("click", () => {
     navLinks.classList.toggle("active"); // Toggle visibility of the menu
-    console.log("Menu button clicked.");
+    console.log("Menu button toggled.");
   });
 
   // Close the menu when a link is clicked
   navLinks.addEventListener("click", (e) => {
     if (e.target.tagName === "A") {
-      console.log("Menu link clicked."); // Debugging
       navLinks.classList.remove("active"); // Hide the menu
+      console.log("Menu link clicked.");
     }
   });
+
+  // Attach the scroll event for reveal animations
+  window.addEventListener("scroll", reveal);
+
+  // Preloader logic
+  const hidePreloader = () => {
+    preloader.style.display = "none";
+    mainContent.style.display = "block";
+    mainContent.style.opacity = "1";
+    reveal(); // Trigger the reveal logic on load
+  };
+
+  // Timeout to hide preloader after a set duration
+  const timeoutId = setTimeout(() => {
+    console.log("Preloader timeout reached.");
+    hidePreloader();
+  }, 6500);
+
+  // Hide preloader when the video ends
+  preloaderVideo.onended = () => {
+    console.log("Preloader video ended.");
+    clearTimeout(timeoutId);
+    hidePreloader();
+  };
+
+  // Hide preloader if there's an error loading the video
+  preloaderVideo.onerror = () => {
+    console.log("Preloader video error.");
+    clearTimeout(timeoutId);
+    hidePreloader();
+  };
 });
