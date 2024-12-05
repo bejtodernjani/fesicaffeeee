@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const timeoutId = setTimeout(() => {
     console.log("Preloader timeout reached.");
     hidePreloader();
-  }, 6500);
+  }, 2500);
 
   // Hide preloader when the video ends
   preloaderVideo.onended = () => {
