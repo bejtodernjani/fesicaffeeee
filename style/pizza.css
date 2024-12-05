@@ -16,14 +16,14 @@
 }
 
 body {
-  background-color: #44b469;
+  background-color: #ffe066;
   color: black;
   overflow-x: hidden;
 }
 
 /* Menu Grid Section */
 .menu-grid {
-  background-color: #44b469; /* Background color of the section */
+  background-color: #ffe066; /* Background color of the section */
   padding: 50px 20px;
 }
 .back-button {
