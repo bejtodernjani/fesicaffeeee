@@ -38,31 +38,42 @@ document.addEventListener("DOMContentLoaded", function () {
   // Attach the scroll event for reveal animations
   window.addEventListener("scroll", reveal);
 
-  // Preloader logic
-  const hidePreloader = () => {
+  if (sessionStorage.getItem("preloaderShown")) {
+    // Skip preloader and show main content immediately
     preloader.style.display = "none";
     mainContent.style.display = "block";
     mainContent.style.opacity = "1";
-    reveal(); // Trigger the reveal logic on load
-  };
+    reveal(); // Trigger the reveal animations if needed
+  } else {
+    // Run the preloader normally on first visit
+    const hidePreloader = () => {
+      preloader.style.display = "none";
+      mainContent.style.display = "block";
+      mainContent.style.opacity = "1";
+      reveal(); // Trigger the reveal logic on load
 
-  // Timeout to hide preloader after a set duration
-  const timeoutId = setTimeout(() => {
-    console.log("Preloader timeout reached.");
-    hidePreloader();
-  }, 2500);
+      // Mark the preloader as shown
+      sessionStorage.setItem("preloaderShown", "true");
+    };
 
-  // Hide preloader when the video ends
-  preloaderVideo.onended = () => {
-    console.log("Preloader video ended.");
-    clearTimeout(timeoutId);
-    hidePreloader();
-  };
+    // Timeout to hide preloader after a set duration
+    const timeoutId = setTimeout(() => {
+      console.log("Preloader timeout reached.");
+      hidePreloader();
+    }, 2500);
 
-  // Hide preloader if there's an error loading the video
-  preloaderVideo.onerror = () => {
-    console.log("Preloader video error.");
-    clearTimeout(timeoutId);
-    hidePreloader();
-  };
+    // Hide preloader when the video ends
+    preloaderVideo.onended = () => {
+      console.log("Preloader video ended.");
+      clearTimeout(timeoutId);
+      hidePreloader();
+    };
+
+    // Hide preloader if there's an error loading the video
+    preloaderVideo.onerror = () => {
+      console.log("Preloader video error.");
+      clearTimeout(timeoutId);
+      hidePreloader();
+    };
+  }
 });

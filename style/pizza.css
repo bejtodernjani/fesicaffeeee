@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Damion&family=Mynerve&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+
+@font-face {
+  font-family: "Bumper Sticker DEMO";
+  src: url("/fonts/BumperStickerDEMO-Regular.woff2") format("woff2"),
+    url("/fonts/BumperStickerDEMO-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #44b469;
+  color: black;
+  overflow-x: hidden;
+}
+
+/* Menu Grid Section */
+.menu-grid {
+  background-color: #44b469; /* Background color of the section */
+  padding: 50px 20px;
+}
+.back-button {
+  position: sticky; /* Makes it stick while scrolling */
+  top: 20px; /* Keeps it 20px from the top */
+  left: 20px; /* Keeps it 20px from the left */
+  z-index: 1000; /* Ensures it stays above other elements */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  line-height: 0;
+}
+
+.back-button:hover {
+  background-color: #ff6f00;
+  transform: scale(1.1);
+}
+.back-button span {
+  font-size: 1.4rem; /* Adjust arrow size if needed */
+  line-height: 1; /* Reset line height for proper alignment */
+  transform: translateY(0); /* Ensure no vertical offset */
+}
+.menu-title {
+  font-family: "Bumper Sticker DEMO", sans-serif;
+  text-align: center;
+  font-size: 4.5rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* Responsive columns */
+  gap: 20px; /* Space between grid items */
+  justify-items: center; /* Center items in their column */
+}
+
+.grid-item {
+  background-color: #f2f2f2; /* Light gray background */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.grid-item img {
+  width: auto; /* Maintain the image's aspect ratio */
+  height: auto; /* Maintain the image's aspect ratio */
+  max-width: 150px; /* Prevent the image from exceeding this width */
+  max-height: 150px; /* Prevent the image from exceeding this height */
+  object-fit: contain; /* Ensure the image stays within its natural bounds */
+  margin: 0 auto; /* Center the image horizontally */
+  display: block; /* Ensure the image is treated as a block element */
+  border-bottom: 2px solid #ddd; /* Optional: separation line */
+}
+
+.grid-item .item-info {
+  padding: 15px;
+}
+
+.grid-item h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0;
+  color: black;
+}
+
+.grid-item p {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px); /* Lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.price {
+  display: block;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff6f00; /* Highlighted price color */
+  font-family: "Poppins", sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-title {
+    font-size: 2rem;
+  }
+}
