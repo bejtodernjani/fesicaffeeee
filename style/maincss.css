@@ -128,7 +128,7 @@ body {
 .hero-button {
   display: inline-block;
   margin-top: 20px;
-  padding: 12px 24px;
+  padding: 16px 32px;
   background-color: black;
   color: white;
   font-family: "Bumper Sticker DEMO", sans-serif;
@@ -143,7 +143,7 @@ body {
 
 .hero-button:hover {
   background-color: #ff8c1a;
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 /* Coffee Section */
@@ -371,7 +371,7 @@ body {
   }
   .hero-button {
     font-size: 0.9rem; /* Slightly smaller font */
-    padding: 10px 20px; /* Reduced padding */
+    padding: 14px 28px; /* Reduced padding */
   }
 
   .coffee-section {
@@ -450,7 +450,7 @@ body {
   }
   .hero-button {
     font-size: 0.8rem; /* Smaller font for very small screens */
-    padding: 8px 16px; /* More compact button */
+    padding: 12px 24px; /* More compact button */
     margin-top: 15px; /* Adjust spacing above the button */
   }
 
