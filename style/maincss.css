@@ -13,6 +13,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 /* Body Styling */
 body {
@@ -147,7 +150,7 @@ body {
 }
 
 /* Coffee Section */
-.coffee-section {
+/* .coffee-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -200,7 +203,7 @@ body {
 .coffee-image img {
   max-width: 500px;
   border-radius: 10px;
-}
+} */
 
 .grid-container {
   display: grid;
