@@ -71,33 +71,39 @@ body {
   grid-template-columns: repeat(
     auto-fit,
     minmax(200px, 1fr)
-  ); /* Responsive columns */
+  ); /* Responsive grid */
   gap: 20px; /* Space between grid items */
-  justify-items: center; /* Center items in their column */
+  justify-items: center; /* Center items in their grid cell */
 }
 
 .grid-item {
+  width: 200px; /* Fixed width */
+  height: 300px; /* Fixed height */
   background-color: #f2f2f2; /* Light gray background */
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   text-align: center;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Distribute content evenly */
+  padding: 15px;
+  box-sizing: border-box; /* Include padding in width and height */
 }
 
 .grid-item img {
-  width: auto; /* Maintain the image's aspect ratio */
-  height: auto; /* Maintain the image's aspect ratio */
-  max-width: 150px; /* Prevent the image from exceeding this width */
-  max-height: 150px; /* Prevent the image from exceeding this height */
-  object-fit: contain; /* Ensure the image stays within its natural bounds */
-  margin: 0 auto; /* Center the image horizontally */
-  display: block; /* Ensure the image is treated as a block element */
-  border-bottom: 2px solid #ddd; /* Optional: separation line */
+  width: 100%; /* Adjust image width to container */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 120px; /* Limit image height */
+  object-fit: contain; /* Ensure image stays within bounds */
 }
 
 .grid-item .item-info {
-  padding: 15px;
+  flex-grow: 1; /* Take up remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .grid-item h2 {
@@ -114,29 +120,56 @@ body {
   color: gray;
 }
 
-.grid-item:hover {
-  transform: translateY(-5px); /* Lift on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
-}
-
 .price {
-  display: block;
-  margin-top: 10px;
   font-size: 1rem;
   font-weight: bold;
-  color: #ff6f00; /* Highlighted price color */
+  color: #ff6f00;
   font-family: "Poppins", sans-serif;
+  margin-top: 10px;
 }
 
 /* Responsive Design */
+
+/* For tablets and smaller screens */
 @media (max-width: 768px) {
   .grid-container {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* Two items per row */
+  }
+
+  .grid-item {
+    width: 150px; /* Adjust width for smaller screens */
+    height: 250px; /* Adjust height for smaller screens */
+  }
+
+  .grid-item img {
+    max-height: 100px; /* Adjust image size */
   }
 }
 
+/* For mobile devices */
 @media (max-width: 480px) {
   .menu-title {
     font-size: 2rem;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* Still two items per row */
+  }
+
+  .grid-item {
+    width: 120px; /* Smaller fixed width for mobile */
+    height: 200px; /* Smaller fixed height for mobile */
+  }
+
+  .grid-item img {
+    max-height: 80px; /* Further reduce image size */
+  }
+
+  .grid-item h2 {
+    font-size: 1rem; /* Reduce font size for smaller screens */
+  }
+
+  .price {
+    font-size: 0.8rem; /* Reduce price font size */
   }
 }
