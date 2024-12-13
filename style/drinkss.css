@@ -14,7 +14,7 @@
 }
 
 body {
-  background-color: #fff; /* Coffee-like color */
+  background-color: #247ba0; /* Coffee-like color */
   color: black;
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
@@ -50,7 +50,7 @@ body {
 }
 
 .menu-title {
-    color: black;
+  color: black;
   font-family: "Bumper Sticker DEMO", sans-serif;
   text-align: center;
   font-size: 4rem;
