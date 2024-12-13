@@ -77,8 +77,8 @@ body {
 }
 
 .grid-item {
-  width: 200px; /* Fixed width */
-  height: 300px; /* Fixed height */
+  width: 230px; /* Fixed width */
+  height: 320px; /* Fixed height */
   background-color: #f2f2f2; /* Light gray background */
   border-radius: 10px;
   overflow: hidden;
@@ -138,7 +138,7 @@ body {
 
   .grid-item {
     width: 150px; /* Adjust width for smaller screens */
-    height: 250px; /* Adjust height for smaller screens */
+    height: 300px; /* Adjust height for smaller screens */
   }
 
   .grid-item img {
@@ -157,8 +157,8 @@ body {
   }
 
   .grid-item {
-    width: 120px; /* Smaller fixed width for mobile */
-    height: 200px; /* Smaller fixed height for mobile */
+    width: 180px; /* Smaller fixed width for mobile */
+    height: 300px; /* Smaller fixed height for mobile */
   }
 
   .grid-item img {
