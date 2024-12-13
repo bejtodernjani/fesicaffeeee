@@ -132,7 +132,7 @@ body {
   display: inline-block;
   margin-top: 20px;
   padding: 16px 32px;
-  background-color: #FF6F00;
+  background-color: #ff6f00;
   color: white;
   font-family: "Bumper Sticker DEMO", sans-serif;
   font-size: 1rem;
@@ -148,62 +148,6 @@ body {
   background-color: #ff8c1a;
   transform: scale(1.1);
 }
-
-/* Coffee Section */
-/* .coffee-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 50px;
-  background-color: #ffffff;
-  min-height: 100vh;
-}
-
-.coffee-text {
-  font: 64px Bumper Sticker DEMO, sans-serif;
-  flex: 1;
-  padding-right: 20px;
-}
-
-.coffee-text h2 {
-  font-size: 3.5rem;
-  font-weight: bold;
-  line-height: 1.2;
-  color: black;
-}
-
-.coffee-text h2 span {
-  color: #9a6324;
-}
-
-#kafe {
-  color: black;
-  font-family: "Damion", cursive;
-  font-weight: 400;
-}
-
-.quote {
-  padding-top: 100px;
-}
-
-.coffee-text .quote {
-  font-family: "Mynerve", cursive;
-  font-weight: 400;
-  font-style: normal;
-  margin-top: 20px;
-  font-size: 1.2rem;
-  color: #555;
-}
-
-.coffee-image {
-  flex: 1;
-  text-align: right;
-}
-
-.coffee-image img {
-  max-width: 500px;
-  border-radius: 10px;
-} */
 
 .grid-container {
   display: grid;
@@ -377,34 +321,6 @@ body {
     padding: 14px 28px; /* Reduced padding */
   }
 
-  .coffee-section {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .coffee-text {
-    padding-right: 0;
-  }
-
-  .coffee-text h2 {
-    font-size: 2.5rem;
-  }
-
-  #kafe {
-    font-size: 2.2rem;
-  }
-
-  .coffee-text .quote {
-    padding-top: 50px; /* Reduce padding for smaller screens */
-    font-size: 1rem; /* Adjust font size for better readability */
-    text-align: center;
-  }
-
-  .coffee-image img {
-    max-width: 90%;
-    margin-top: 20px;
-  }
   .grid-container {
     grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
     grid-gap: 10px; /* Reduced gap for smaller screens */
@@ -456,25 +372,6 @@ body {
     padding: 12px 24px; /* More compact button */
     margin-top: 15px; /* Adjust spacing above the button */
   }
-
-  .coffee-text h2 {
-    font-size: 2rem;
-  }
-
-  #kafe {
-    font-size: 1.8rem;
-  }
-
-  .coffee-text .quote {
-    padding-top: 30px; /* Further reduce padding for smaller screens */
-    font-size: 0.9rem; /* Slightly smaller font size */
-    text-align: center;
-  }
-
-  .coffee-image img {
-    max-width: 100%;
-  }
-
   .grid-container {
     grid-template-columns: 1fr; /* Single column for mobile */
     grid-gap: 8px; /* Compact spacing for small screens */
