@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Damion&family=Mynerve&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
-
 @font-face {
   font-family: "Bumper Sticker DEMO";
   src: url("/fonts/BumperStickerDEMO-Regular.woff2") format("woff2"),
@@ -7,7 +6,6 @@
   font-weight: normal;
   font-style: normal;
 }
-
 /* General Reset */
 * {
   margin: 0;
@@ -16,21 +14,21 @@
 }
 
 body {
-  background-color: #fff;
-  color: black;
+  background-color: #fff; /* Coffee-like color */
+  color: white;
+  font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }
 
-/* Menu Grid Section */
 .menu-grid {
-  background-color: #fff; /* Background color of the section */
   padding: 50px 20px;
 }
+
 .back-button {
-  position: sticky; /* Makes it stick while scrolling */
-  top: 20px; /* Keeps it 20px from the top */
-  left: 20px; /* Keeps it 20px from the left */
-  z-index: 1000; /* Ensures it stays above other elements */
+  position: sticky;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,132 +42,101 @@ body {
   border-radius: 50%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.3s ease;
-  line-height: 0;
 }
 
 .back-button:hover {
   background-color: #ff6f00;
   transform: scale(1.1);
 }
-.back-button span {
-  font-size: 1.4rem; /* Adjust arrow size if needed */
-  line-height: 1; /* Reset line height for proper alignment */
-  transform: translateY(0); /* Ensure no vertical offset */
-}
+
 .menu-title {
+    color: black;
   font-family: "Bumper Sticker DEMO", sans-serif;
   text-align: center;
-  font-size: 4.5rem;
+  font-size: 4rem;
   font-weight: 500;
-  color: black;
-  margin-bottom: 30px;
-  text-transform: uppercase;
+  margin-bottom: 40px;
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
-    minmax(200px, 1fr)
-  ); /* Responsive grid */
-  gap: 20px; /* Space between grid items */
-  justify-items: center; /* Center items in their grid cell */
+    minmax(300px, 1fr)
+  ); /* Larger containers */
+  gap: 30px; /* Increased space between rows and columns */
+  justify-items: center;
 }
 
 .grid-item {
-  width: 200px; /* Fixed width */
-  height: 300px; /* Fixed height */
-  background-color: #f2f2f2; /* Light gray background */
+  background-color: #f2f2f2; /* Light gray for contrast */
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  text-align: center;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  display: flex;
-  flex-direction: column; /* Stack content vertically */
-  justify-content: space-between; /* Distribute content evenly */
-  padding: 15px;
-  box-sizing: border-box; /* Include padding in width and height */
-}
-
-.grid-item img {
-  width: 100%; /* Adjust image width to container */
-  height: auto; /* Maintain aspect ratio */
-  max-height: 120px; /* Limit image height */
-  object-fit: contain; /* Ensure image stays within bounds */
-}
-
-.grid-item .item-info {
-  flex-grow: 1; /* Take up remaining space */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  padding: 20px;
+  width: 100%;
+  height: auto;
 }
 
 .grid-item h2 {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.7rem; /* Larger heading */
   font-weight: bold;
-  margin: 10px 0;
+  margin-bottom: 20px;
   color: black;
 }
 
-.grid-item p {
-  font-family: "Poppins", sans-serif;
-  font-size: 0.9rem;
-  color: gray;
+.grid-item ul {
+  list-style: none; /* No bullets */
+  padding: 0;
+  margin: 0;
+  color: #555;
 }
 
-.price {
+.grid-item ul li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: black;
+  display: flex;
+  justify-content: space-between; /* Push price to the far right */
+  align-items: center;
+}
+
+.grid-item ul li .price {
   font-size: 1rem;
   font-weight: bold;
-  color: #ff6f00;
-  font-family: "Poppins", sans-serif;
-  margin-top: 10px;
+  color: #ff6f00; /* Highlight prices */
 }
 
 /* Responsive Design */
-
-/* For tablets and smaller screens */
 @media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr); /* Two items per row */
-  }
-
-  .grid-item {
-    width: 150px; /* Adjust width for smaller screens */
-    height: 250px; /* Adjust height for smaller screens */
-  }
-
-  .grid-item img {
-    max-height: 100px; /* Adjust image size */
-  }
-}
-
-/* For mobile devices */
-@media (max-width: 480px) {
   .menu-title {
-    font-size: 2rem;
-  }
-
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr); /* Still two items per row */
-  }
-
-  .grid-item {
-    width: 120px; /* Smaller fixed width for mobile */
-    height: 200px; /* Smaller fixed height for mobile */
-  }
-
-  .grid-item img {
-    max-height: 80px; /* Further reduce image size */
+    font-size: 3rem;
   }
 
   .grid-item h2 {
-    font-size: 1rem; /* Reduce font size for smaller screens */
+    font-size: 1.5rem;
   }
 
-  .price {
-    font-size: 0.8rem; /* Reduce price font size */
+  .grid-item ul li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-title {
+    font-size: 2.5rem;
+  }
+
+  .grid-item h2 {
+    font-size: 1.2rem;
+  }
+
+  .grid-item ul li {
+    font-size: 0.9rem;
+  }
+
+  .grid-item ul li .price {
+    font-size: 0.9rem;
   }
 }
