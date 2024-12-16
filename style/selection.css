@@ -95,6 +95,7 @@ body {
     flex-direction: column; /* Stack content vertically */
     height: auto; /* Allow content to scroll */
     padding: 20px; /* Add some padding */
+    margin-top: 200px;
   }
 
   .menu-title {
